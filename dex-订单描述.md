@@ -163,6 +163,10 @@
 
 `feature_fee` : 订单的功能费；查看上述(7)对功能费的描述
 
+`identify`: 标识一个交易中每个订单消息的唯一性。 因为一笔交易中可能存在多个创建订单的消息，所以在每个创建的订单的消息中，加入 identify 字段，标示这个订单在这笔交易中的唯一性。
+
+订单ID由三部分组成：userAddr、userSequence、identify； 组成方式为 `userSequence-(userSequence * (2 ** 8))+identify`两部分链接组成.
+
 
 TODO. 将会对订单返回的字段中的数字进行文本化描述.
 
